@@ -24,6 +24,14 @@ public class Queue {
         putloc = getloc = 0;
     }
 
+    Queue (char a[]) {
+        putloc = 0;
+        getloc = 0;
+        q = new char[a.length+1];
+        for(int i = 0; i < a.length; i++) put(a[i]);
+
+    }
+
     // Поместить символ в очередь
     void put(char ch) {
         if (putloc == q.length - 1) {
@@ -43,11 +51,5 @@ public class Queue {
         getloc++;
         return q[getloc];
     }
-    Queue (char a[]) {
-        putloc = 0;
-        getloc = 0;
-        q = new char[a.length+1];
-        for(int i = 0; i < a.length; i++) put(a[i]);
 
-    }
 }
